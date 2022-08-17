@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[data-inviewport="scale-in-ltr"] {
+	transition: transform 2s;
+	transform-origin: left;
+	transform: scaleX(0%);
+}
+
+[data-inviewport="scale-in-ltr"][data-is-inviewport="true"] {
+	transform: scaleX(100%);
+}
+
+[data-inviewport="scale-in-rtl"] {
+	transition: transform 2s;
+	transform-origin: right;
+	transform: scaleX(0%);
+}
+
+[data-inviewport="scale-in-rtl"][data-is-inviewport="true"] {
+	transform: scaleX(100%);
+}
+
+[data-inviewport="dash-in"] {
+	stroke-dasharray: 282.78204345703125;
+	stroke-dashoffset: -282.78204345703125;
+}
+
+[data-inviewport="dash-in"][data-is-inviewport="true"] {
+	@apply animate-dash-in;
+}
+
+body {
+	@apply overflow-x-hidden;
+}
